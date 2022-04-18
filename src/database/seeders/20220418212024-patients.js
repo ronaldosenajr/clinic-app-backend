@@ -21,3 +21,5 @@ module.exports = {
     await queryInterface.bulkDelete('patients', null, {});
   }
 };
+
+// OLHA SÓ BIXO, OLOKO MEU
