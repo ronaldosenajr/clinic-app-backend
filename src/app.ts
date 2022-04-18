@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import getPatients, { getPatientByUserId } from './controllers/PatientsController';
 
 class App {
   public app: express.Express;
@@ -28,8 +29,10 @@ class App {
   }
 
   private routers(): void {
-    this.app.route('/login')
-      .post();
+    this.app.route('/patients/:id')
+      .get(getPatientByUserId);
+    this.app.route('/patients')
+      .get(getPatients);
   }
 
   // ...
@@ -39,8 +42,6 @@ class App {
 }
 
 export { App };
-
-// TESTANDO
 
 // A execução dos testes de cobertura depende dessa exportação
 export const { app } = new App();
