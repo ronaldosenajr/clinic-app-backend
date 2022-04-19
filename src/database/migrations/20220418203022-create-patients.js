@@ -28,6 +28,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      sessions: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+      }
     }, {
       underscored: true
     });

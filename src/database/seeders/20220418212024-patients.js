@@ -13,6 +13,7 @@ module.exports = {
       email: 'teste2@teste.com',
       name_responsible: 'pai do teste 2',
       cpf_nf: '12345678922',
+      sessions: 5,
       user_id: 2
      }], {}); 
   },
