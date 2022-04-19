@@ -41,6 +41,10 @@ Patients.init({
     type: DataTypes.STRING,
     allowNull: true,
   },
+  sessions: {
+    type: DataTypes.NUMBER,
+    allowNull: true,
+  },
 }, {
   underscored: true,
   sequelize: db,
