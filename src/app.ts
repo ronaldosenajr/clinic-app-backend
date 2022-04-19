@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import getPatients, { getPatientByUserId } from './controllers/PatientsController';
+import getFrequency, { getFrequencyByUserId } from './controllers/FrequencyController';
 
 class App {
   public app: express.Express;
@@ -28,8 +30,14 @@ class App {
   }
 
   private routers(): void {
-    this.app.route('/login')
-      .post();
+    this.app.route('/patients/:id')
+      .get(getPatientByUserId);
+    this.app.route('/frequency/:id')
+      .get(getFrequencyByUserId);
+    this.app.route('/patients')
+      .get(getPatients);
+    this.app.route('/frequency')
+      .get(getFrequency);
   }
 
   // ...
